@@ -1,0 +1,23 @@
+.home {
+	width: 100%;
+	height: calc(100vh - 60px);
+	background-image: url("../../../assets/images/eee.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:cover;
+	position: relative;
+	// display: flex;
+	// align-items: end;
+	// justify-content: flex-end;
+}
+.homeTitleContainer {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.homeTitle {
+	font-size: 80px;
+	color: white;
+	margin-bottom: 20px;
+}

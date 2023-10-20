@@ -1,0 +1,15 @@
+.sqrBtn {
+	max-width: 200px;
+	height: 50px;
+	padding: 10px 15px;
+	background: white;
+	color: #010F1C;
+	border: none;
+	outline: 1px solid #010F1C;
+	transition: 0.5s all ease 0s;
+}
+.sqrBtn:hover {
+	color: white;
+	background-color: #010F1C;
+	outline: none;
+}

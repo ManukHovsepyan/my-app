@@ -1,0 +1,5 @@
+export const en = {
+	translation: {
+		"app-name": "A Piece Of Sun"
+	}
+}

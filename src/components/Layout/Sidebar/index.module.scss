@@ -1,0 +1,45 @@
+/* Sidebar.module.scss */
+
+.sidebar {
+	width: 270px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.75);
+  clip-path: inset(0px -15px 0px 0px);
+	color: #000;
+	height: calc(100vh - 60px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 60px;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 4;
+}
+
+.sidebar h1 {
+	padding: 20px;
+	text-align: center;
+}
+
+.navList {
+	list-style: none;
+	flex: 1; /* Allow the list to expand to fill the available space */
+}
+
+.navItem {
+	padding: 10px;
+}
+
+.navItem a {
+	color: #000;
+	text-decoration: none;
+	display: block;
+}
+
+/* Highlight the current page link */
+.navItem.active {
+	background-color: #555;
+}

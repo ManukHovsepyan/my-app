@@ -1,0 +1,21 @@
+.selectWrapper {
+	position: relative;
+}
+.activeImage {
+	width: 25px;
+	height: 25px;
+}
+.selectBody {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+  top: 100%;
+	img {
+		width: 25px;
+		height: 25px;
+		margin-bottom: 10px;
+	}
+	img:first-child {
+		margin-top: 5px;
+	}
+}

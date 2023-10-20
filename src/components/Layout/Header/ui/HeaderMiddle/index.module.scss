@@ -1,0 +1,31 @@
+.headerMiddle {
+	position: relative;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 30px;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		border-radius: 0 0 50% 50%;
+		height: 100px;
+		filter: drop-shadow(0 5px rgba(0,0,0,0.08));
+	}
+	transform: translate(30%, 0%);
+}
+
+.logo {
+	margin-top: 35px;
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
