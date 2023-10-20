@@ -1,20 +1,43 @@
-import Dropdown from "../Dropdown";
+import { getMenuItemByMenuIdElem } from "helpers/helpers";
 
-const Category = ({ option } : any) => {
-	console.log(option.options)
+const Category = ({ 
+	options, 
+	level = 0,
+	menuItems,
+	setMenuItems,
+}: any) => {
+
+	const toggleCategory = (event: any, id: number) => {
+		event.stopPropagation()
+		// const changedMenuList = getMenuItemByMenuIdElem(options, id)
+		// console.log(changedMenuList)
+		// setMenuItems(changedMenuList)
+	}
+
   return (
-		<div>
-			<h3>
-				{option.category}
-				{
-					option.children &&
-					option.children.map((item:any, index : number) => (
-						<Dropdown submenus={item} key={index}/>
-					))
-				}
-			</h3>
-		</div>
+    <>
+      {menuItems?.map((item: Record<string, any>, index: number) => {
+       return (
+				<div style={{ 
+					marginLeft: `10px`, 
+				}}
+				onClick={(event) => toggleCategory(event, item.id)} 
+				key={item.id}>
+					<div style={{display: "flex"}}>
+						{level > 0 && item.children?.[0] && <button>(0)</button>}
+						<h3>{item.title}</h3>
+					</div>
+					{item.children && item.isVisible && <Category 
+						menuItems={item.children} 
+						setMenuItems={setMenuItems} 
+						options={options} 
+						level={level + 1} 
+					/>}
+				</div>
+			);
+      })}
+    </>
   );
 };
 
-export default Category
+export default Category;
