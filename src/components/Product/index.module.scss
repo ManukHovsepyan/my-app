@@ -1,0 +1,29 @@
+.productWrapper {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background-color: rgb(236, 231, 231);
+	margin: 10px;
+	flex: 0 1 calc(25% - 20px);
+	img {
+		width: 100%;
+	}
+	.cartButton {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		.cartButtonText {
+			margin-right: 8px;
+		}
+	}
+	@media (max-width: 991px) {
+		flex: 0 1 calc(33.333% - 20px);
+	}
+	@media (max-width: 768px) {
+		flex: 0 1 calc(50% - 20px);
+	}
+	@media (max-width: 551px) {
+		flex: 0 1 100%;
+	}
+}

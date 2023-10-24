@@ -4,12 +4,14 @@ import i18n from 'language/i18n';
 
 export interface AppState {
   isSidebarShow: boolean;
-  language: string
+  language: string,
+  wrapperSpace: boolean
 }
 
 const initialState: AppState = {
   isSidebarShow: false,
-  language: getLanguageFromLocalStorage() || "am"
+  language: getLanguageFromLocalStorage() || "am",
+  wrapperSpace: true
 };
 
 const appSlice = createSlice({
@@ -23,10 +25,14 @@ const appSlice = createSlice({
       setLanguageInLocalStorage(action.payload);
       state.language = action.payload
       i18n.changeLanguage(action.payload)
+    },
+    toggleWrapperSpace(state, action) {
+      console.log(action, "88888888888888888888888")
+      state.wrapperSpace = action.payload
     }
   },
 });
 
-export const { toggleSidebarShow, updateLanguage } = appSlice.actions;
+export const { toggleSidebarShow, updateLanguage, toggleWrapperSpace } = appSlice.actions;
 
 export default appSlice.reducer;

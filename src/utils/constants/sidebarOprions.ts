@@ -11,14 +11,14 @@ export const sidebarOptions = [
         isVisible: false,
         children: [
           {
-            title: "Homeasdsadsa",
+            title: "123",
             id: 3,
-            route: "/asdasd",
+            route: "/123",
           },
           {
-            title: "Homeasdsadsa",
+            title: "234",
             id: 4,
-            route: "/asdasd",
+            route: "/234",
           }
         ]
       },
@@ -29,14 +29,14 @@ export const sidebarOptions = [
         isVisible: false,
         children: [
           {
-            title: "absdasd",
+            title: "456",
             id: 6,
-            route: "/asdasd",
+            route: "/456",
           },
           {
-            title: "Homeasdsadsa",
+            title: "789",
             id: 7,
-            route: "/asdasd",
+            route: "/789",
           }
         ]
       },
@@ -53,6 +53,12 @@ export const sidebarOptions = [
     id: 9,
     isVisible: true,
     children: [
+      {
+        title: "All Products",
+        id: 15,
+        isVisible : false,
+        route: "/all-products"
+      },
       {
         title: "Fruits",
         id: 10,

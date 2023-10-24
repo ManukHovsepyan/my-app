@@ -9,16 +9,17 @@ import { PortalAnimations, SidebarOptions } from "../../../models/animationOptio
 import { toggleSidebarShow } from "../../../store/appSlice";
 import { debounce } from "../../../hooks/useDebounce";
 import { useCallback } from "react";
+import { useLocation } from "react-router-dom";
 
 interface Props {
-	children: any
+	children: any,
+	// padding: string
 }
 
 const Wrapper = ({ children }: Props) => {
-
+	const wrapperSpace = useSelector((state: RootState) => state.app.wrapperSpace);
 	const isSidebarVisible = useSelector((state: RootState) => state.app.isSidebarShow);
 	const dispatch = useDispatch();
-
 	const [ref, animate] = useAnimation<HTMLDivElement>(SidebarOptions);
 	const [refBody, animateBody] = useAnimation<HTMLDivElement>(SidebarOptions);
 	
@@ -28,6 +29,7 @@ const Wrapper = ({ children }: Props) => {
 		]);
 		animateBody(isSidebarVisible ? PortalAnimations.fromLeft : PortalAnimations.toRight)
 	}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const debounceSidebar = useCallback(
 		debounce(animateSidebar, 200),
 	[isSidebarVisible])
@@ -37,7 +39,7 @@ const Wrapper = ({ children }: Props) => {
 			<Sidebar ref={ref} />
 			<Header callBack={debounceSidebar} />
 			<div ref={refBody} className={style.wrapperBody}>
-				<div className={style.wrapperContent}>
+				<div className={`${wrapperSpace ? style.wrapperContent : ''}`}>
 					{children}
 				</div>
 			</div>

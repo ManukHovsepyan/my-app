@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 import Container from "components/Layout/Container";
 
 const HomeHeader = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	return (
 		<div className={style.home}>
 		<Container>
 			<div className={style.homeTitleContainer}>
 				<div>
 					<h1 className={style.homeTitle}>{t('app-name')}</h1>
-					<SquareButton>Shop now</SquareButton>
+					<SquareButton>{t('shop-now')}</SquareButton>
 				</div>
 			</div>
 		</Container>
