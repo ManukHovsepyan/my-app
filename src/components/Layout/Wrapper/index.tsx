@@ -13,7 +13,6 @@ import { useLocation } from "react-router-dom";
 
 interface Props {
 	children: any,
-	// padding: string
 }
 
 const Wrapper = ({ children }: Props) => {

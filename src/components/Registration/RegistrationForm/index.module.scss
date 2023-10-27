@@ -1,0 +1,34 @@
+.registrationForm {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+.registrationFormCotainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+.countrySelect {
+	button {
+		border: none !important;
+		border-bottom: 1px solid #010F1C !important;
+		color: #010F1C;
+	}
+}
+.registrationFormButtons {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.registrationFormContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+.errorBorder {
+	color: red;
+	font-size: 14px;
+}

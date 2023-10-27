@@ -1,6 +1,10 @@
-.ProductCategoryContainer {
+.ProductTopCategoryContainer {
 	display: flex;
 	justify-content: space-around;
 	padding: 20px;
 	flex-wrap: wrap;
+}
+.ProductTopCategoryTitle {
+	width: 100%;
+	margin: 15px 0;
 }

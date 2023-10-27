@@ -1,0 +1,46 @@
+.loginForm {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	
+}
+.loginFormFieldContainer {
+	width: 70%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.passwordContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	label {
+		color: #010F1C;
+	}
+}
+.passwordHideEye {
+	position: absolute;
+	bottom: 8px;
+	right: 5px;
+}
+.emailContainer {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	label {
+		color: #010F1C;
+	}
+}
+.forgetPassword {
+	margin-bottom: 20px;
+	cursor: pointer;
+	color: #010F1C;
+}
+.signUpTitleContainer {
+	margin-top: 20px;
+	color: #010F1C;
+}

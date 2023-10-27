@@ -1,15 +1,15 @@
-import img1 from "assets/images/nuts.webp"
-import img2 from "assets/images/nuts-fruits.webp"
-import img3 from "assets/images/fruits.webp"
+import img1 from "assets/images/tsukat.jpg"
+import img2 from "assets/images/nartur.webp"
+import img3 from "assets/images/chips.jpg"
 export const HOMEPAGE_CATEGORY = [
 	{
 		id: 1,
-		name: "dry Fruit 1",
+		name: "Natural dry fruits",
 		src: img1
 	},
 	{
 		id: 2,
-		name: "dry Fruit 2",
+		name: "Tsukat",
 		src: img2
 	},
 	{

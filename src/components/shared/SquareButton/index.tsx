@@ -1,8 +1,8 @@
 import style from "./index.module.scss"
 
-const SquareButton  = ({children, className} : any) => {
+const SquareButton  = ({children, className, ...rest} : any) => {
 	return (
-		<button className={`${style.sqrBtn} ${className}`}>
+		<button className={`${style.sqrBtn} ${className}`} {...rest}>
 			{children}
 		</button>
 	)

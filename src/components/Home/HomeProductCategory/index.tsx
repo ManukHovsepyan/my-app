@@ -1,13 +1,18 @@
-import ProductCategory from "components/ProductCategory"
 import { HOMEPAGE_CATEGORY as categories } from "utils/constants/homePageCategory"
 import style from "./index.module.scss"
+import ProductTopCategory from "components/ProductTopCategory"
 
 const HomeProductCategory = () => {
 	return (
-		<div className={style.ProductCategoryContainer}>
+		<div className={style.ProductTopCategoryContainer}>
+			<div className={style.ProductTopCategoryTitle}>
+				<h1>
+					Top Categories
+				</h1>
+			</div>
 			{
 				categories?.map(category => (
-					<ProductCategory key={category.id} category={category} />
+					<ProductTopCategory key={category.id} category={category} />
 				))
 			}
 		</div>

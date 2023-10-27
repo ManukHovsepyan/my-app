@@ -1,0 +1,19 @@
+.SkeletonLoaderStyles {
+	border-radius: 15px;
+	box-shadow: 0 0 10px rgba(0,0,0,.05);
+}
+.skeletonAnimation {
+	background: #eee;
+	background: linear-gradient(110deg, rgba(0, 0, 0, 0.1) 12%, rgba(0, 0, 0, 0.13) 22%, rgba(0, 0, 0, 0.1) 31%);
+	background-size: 200% 100%;
+	animation: shineKeys 1.5s infinite linear;
+}
+
+@keyframes shineKeys {
+	from {
+		background-position-x: 0%;
+	}
+	to {
+		background-position-x: -200%;
+	}
+}

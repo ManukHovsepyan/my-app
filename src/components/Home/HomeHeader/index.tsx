@@ -9,7 +9,7 @@ const HomeHeader = () => {
 		<div className={style.home}>
 		<Container>
 			<div className={style.homeTitleContainer}>
-				<div>
+				<div className={style.homeTitleMiddleContainer}>
 					<h1 className={style.homeTitle}>{t('app-name')}</h1>
 					<SquareButton>{t('shop-now')}</SquareButton>
 				</div>

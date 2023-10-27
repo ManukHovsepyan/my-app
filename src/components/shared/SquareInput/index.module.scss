@@ -1,0 +1,9 @@
+.SquareInput {
+	padding: 10px 10px 10px 2px;
+	border: none;
+	border-bottom: 1px solid #010F1C;
+	color: #010F1C;
+	&:focus, &:active {
+		outline: none;
+	}
+}
