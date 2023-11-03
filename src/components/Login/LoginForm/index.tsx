@@ -4,15 +4,32 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai"
 import SquareInput from "components/shared/SquareInput";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { validateLoginForm } from "./validation"
+import { useDispatch } from "react-redux";
+import { loginUser } from "store/authSlice";
+
 
 const LoginForm = () => {
-	const [email, setEmail] = useState("")
-	const [password, setPassword] = useState("")
-	const [isPasswordShow, setIsPasswordShow] = useState(false)
+	const dispatch = useDispatch()
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [isPasswordShow, setIsPasswordShow] = useState(false);
+	const [errors, setErrors] = useState({
+		email: "",
+		password: ""
+	})
 
 	const formSubmit = (event : any) => {
 		event.preventDefault()
-		console.log(email, password)
+		const newErrors = validateLoginForm({"email": email, "password": password})
+    if (Object.values(newErrors).every((error) => !error)) {
+			dispatch(loginUser({
+				email,
+				password
+			}))
+    } else {
+      setErrors(newErrors);
+    }
 	}
 	const togglePasswordShow = () => {
 		setIsPasswordShow(!isPasswordShow)
@@ -25,6 +42,10 @@ const LoginForm = () => {
 					<SquareInput 
 						value={email} 
 						onChange={(event : any) => setEmail(event.target.value)}/>
+						{
+							errors.email && 
+							<span>{errors.email}</span>
+						}
 				</div>
 				<div className={style.passwordContainer}>
 					<label>Password</label>
@@ -39,10 +60,14 @@ const LoginForm = () => {
 								onClick={() => togglePasswordShow()}/>
 							)
 					}
-					<SquareInput 
+					<SquareInput
 						type={isPasswordShow ? "text" : "password"} 
 						value={password} 
 						onChange={(event : any) => setPassword(event.target.value)} />
+						{
+							errors.password && 
+							<span>{errors.password}</span>
+						}
 				</div>
 				<div className={style.forgetPassword}>
 					<span>Forgot your password?</span>
@@ -50,7 +75,7 @@ const LoginForm = () => {
 				<SquareButton onClick={(event : any) => formSubmit(event)}>Login</SquareButton>
 				<div className={style.signUpTitleContainer}>
 					<p>
-						You dont have an account <Link to={'/registration'}>Sing Up!</Link>
+						Dont have an account <Link to={'/registration'}>Sing Up!</Link>
 					</p>
 				</div>
 			</div>

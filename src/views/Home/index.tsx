@@ -16,13 +16,12 @@ const Home = () => {
 			dispatch(toggleWrapperSpace(true));
 		};
 	}, [])
+	
 	return (
 		<div>
 			<HomeHeader />
 			<HomeProductCategory />
 			<SpecialOffer img={img}/>
-			<HomeProductCategory />
-			<HomeProductCategory />
 		</div>
 	)
 }

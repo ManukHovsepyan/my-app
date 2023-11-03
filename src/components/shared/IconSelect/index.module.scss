@@ -2,8 +2,8 @@
 	position: relative;
 }
 .activeImage {
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 }
 .selectBody {
 	display: flex;
@@ -11,8 +11,8 @@
 	position: absolute;
   top: 100%;
 	img {
-		width: 25px;
-		height: 25px;
+		width: 30px;
+		height: 30px;
 		margin-bottom: 10px;
 	}
 	img:first-child {

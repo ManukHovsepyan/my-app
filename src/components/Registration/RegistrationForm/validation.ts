@@ -1,5 +1,3 @@
-// validation.js
-
 export function validateFormStep(step: any, data : any) {
   const errors = {
     name: "",
@@ -19,7 +17,7 @@ export function validateFormStep(step: any, data : any) {
     if (data.surname.trim() === "") {
       errors.surname = "Surname is required";
     }
-    if (!data.country) { // Check if country is empty
+    if (!data.country) {
       errors.country = "Country is required";
     }
     if (data.date.trim() === "") {

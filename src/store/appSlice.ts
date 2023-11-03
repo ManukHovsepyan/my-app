@@ -27,7 +27,6 @@ const appSlice = createSlice({
       i18n.changeLanguage(action.payload)
     },
     toggleWrapperSpace(state, action) {
-      console.log(action, "88888888888888888888888")
       state.wrapperSpace = action.payload
     }
   },

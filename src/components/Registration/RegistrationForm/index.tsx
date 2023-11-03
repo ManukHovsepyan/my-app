@@ -6,19 +6,23 @@ import SquareDateInput from "components/shared/SquareDateInput";
 import ReactFlagsSelect from "react-flags-select";
 import { getCountryFullName } from "helpers/helpers";
 import { validateFormStep } from "./validation"
+import { useDispatch } from "react-redux";
+import { User, registrationUser } from "store/authSlice";
+import { AppDispatch } from "store/store";
 
 const RegistrationForm = () => {
+  const dispatch: AppDispatch = useDispatch()
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<User>({
     name: "",
     surname: "",
     country: "",
-    countryFullName: "",
     date: "",
     email: "",
     phone: "",
     userName: "",
-    password: ""
+    password: "",
+    countryFullName: ""
   });
 
   const [errors, setErrors] = useState({
@@ -46,7 +50,7 @@ const RegistrationForm = () => {
     event.preventDefault();
     const newErrors = validateFormStep(step, formData);
     if (Object.values(newErrors).every((error) => !error)) {
-      console.log(formData, "sd");
+      dispatch(registrationUser(formData))
     } else {
       setErrors(newErrors);
     }

@@ -1,12 +1,13 @@
 
-import React from 'react';
-import { Route, Routes as ReactRoutes } from 'react-router-dom'; // Renamed the imported Routes as ReactRoutes
-import Home from '../views/Home';
-import About from '../views/About';
-import AllProduct from "../views/AllProducts"
-import Login from 'views/Login';
-import Registration from 'views/Registration';
+import React, { lazy, Suspense } from 'react';
+import { Route, Routes as ReactRoutes } from 'react-router-dom';
+import Loading from 'components/Loading';
 
+const Home = lazy(() => import('views/Home'));
+const Login = lazy(() => import('views/Login'));
+const AllProduct = lazy(() => import('views/AllProducts'));
+const Registration = lazy(() => import('views/Registration'))
+const About = lazy(() => import('views/About'))
 
 const Routes = () => (
   <ReactRoutes>
