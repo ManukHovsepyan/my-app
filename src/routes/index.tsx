@@ -2,6 +2,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes as ReactRoutes } from 'react-router-dom';
 import Loading from 'components/Loading';
+import Wishlist from 'views/Wishlist';
 
 const Home = lazy(() => import('views/Home'));
 const Login = lazy(() => import('views/Login'));
@@ -16,6 +17,7 @@ const Routes = () => (
     <Route path='/all-products' element={<AllProduct />}/>
     <Route path='/login' element={<Login />} />
     <Route path='/registration' element={<Registration />} />
+    <Route path='/wishlist' element={<Wishlist />} />
   </ReactRoutes>
 );
 

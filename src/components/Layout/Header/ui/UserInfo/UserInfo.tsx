@@ -5,10 +5,10 @@ import style from "./index.module.scss"
 import { selectLikedProductCount } from 'store/productSlice';
 import { useSelector } from "react-redux";
 const UserInfo = () => {
-	const navigator = useNavigate()
+	const navigate = useNavigate()
 	const likedProductCount = useSelector(selectLikedProductCount);
 	const toWishList = () => {
-		
+		navigate("/wishlist")
 	}
 	return (
 		<>
@@ -16,7 +16,9 @@ const UserInfo = () => {
 					<CiUser size={30} />
 				</Link>
 			<CiShoppingCart size={30} />
-			<div className={style.infoWishListContainer} onClick={toWishList}>
+			<div 
+				className={style.infoWishListContainer} 
+				onClick={toWishList}>
 				{
 					likedProductCount > 0 &&
 					<span>
