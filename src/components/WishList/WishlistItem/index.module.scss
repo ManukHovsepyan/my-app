@@ -1,0 +1,68 @@
+.wishlistItemContainer {
+	width: 100%;
+	padding: 20px 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #e65767;
+	.imageAndTitle {
+		display: flex;
+		align-items: center;
+		img {
+			width: 100px;
+			height: 100px;
+			margin-right: 20px;
+			border-radius: 50%;
+		}
+		span {
+			font-size: 20px;
+			color: black;
+			margin-right: 20px;
+		}
+		button {
+			 padding: 10px 10px;
+			 width: 150px;
+			 font-size: 20px;
+			 background-color: black;
+			 color: white;
+			 font-weight: 600;
+			 border: none;
+			 outline: 1px solid #010F1C;
+			 transition: 0.5s all ease 0s;
+		} & :hover {
+			color: black;
+			background-color: white;
+			outline: none;
+		}
+	}
+	.productMainInfo {
+		display: flex;
+	}
+}
+.dialogWrapper {
+	display: flex;
+	.dialogImage {
+		width: 50%;
+		height: 500px;
+	}
+	.dialogInfoContainer {
+		width: 100%;
+		padding: 25px;
+		display: flex;
+		flex-direction: column;
+		.dialogInfoDescriptionAndCount {
+			display: flex;
+			flex-direction: column;
+			input {
+				border: 1px solid black;
+			}
+		}
+		.dialogProductTitle {
+			margin-bottom: 15px;
+			font-size: 25px;
+		}
+		.dialogProductPrice {
+			font-size: 20px;
+		}
+	}
+}
