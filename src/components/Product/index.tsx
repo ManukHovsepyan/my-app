@@ -41,7 +41,7 @@ const Product = ({ product }: any) => {
         '& > legend': { mt: 2 },
       }}
     >
-      <Typography component="legend">Controlled</Typography>
+      {/* <Typography component="legend">Controlled</Typography> */}
       <Rating
         name="no-value"
         value={value}

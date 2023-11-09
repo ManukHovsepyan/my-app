@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import AlertDialog from 'components/shared/AlertDialog';
 import style from './index.module.scss';
-import Button from '@mui/material/Button';
 import SquareInput from 'components/shared/SquareInput';
+import SquareButton from 'components/shared/SquareButton';
+import { AiFillHeart } from "react-icons/ai"
+import { Link } from 'react-router-dom';
 
 const WishlistItem = ({ product }: any) => {
   const [openDialog, setOpenDialog] = useState(false);
+  const [count, setCount] = useState(0)
 
   const handleClickOpen = () => {
     setOpenDialog(true);
@@ -34,17 +37,21 @@ const WishlistItem = ({ product }: any) => {
 									<span>֏</span>
 								</p>
 							</div>
-							<div className={style.dialogInfoDescriptionAndCount}>
+              <div>
 								<p>
 									{product.description}
 								</p>
-								<SquareInput type="number" placeholder="Enter count" />
+              </div>
+							<div className={style.dialogInfoDescriptionAndCount}>
+								<SquareInput onChange={(event: any) => setCount(event.target.value)} value={count} type="number" placeholder="Enter count" />
+                <SquareButton>
+                  ADD TO CART
+                </SquareButton>
 							</div>
 						</div>
 					</div>
         </AlertDialog>
       </div>
-      {/* Other content */}
     </div>
   );
 };

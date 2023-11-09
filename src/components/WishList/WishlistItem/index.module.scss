@@ -49,12 +49,19 @@
 		width: 100%;
 		padding: 25px;
 		display: flex;
+		justify-content: space-between;
 		flex-direction: column;
 		.dialogInfoDescriptionAndCount {
 			display: flex;
-			flex-direction: column;
+			height: 50px;
+			button {
+				width: 50%;
+			}
 			input {
-				border: 1px solid black;
+				width: 50%;
+				border: none;
+				outline: 1px solid #010F1C;
+				padding-left: 20px;
 			}
 		}
 		.dialogProductTitle {
